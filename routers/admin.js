@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const formidable = require("formidable");
-const { insertDocument } = require("../db/courses");
+const { insertDocument, CourseModel } = require("../db/courses");
 const { uploadBytes, ref } = require("firebase/storage");
 const admin = Router();
 const fs = require('fs');
@@ -17,8 +17,18 @@ admin.use(async (req, res, next) => {
     next();
 })
 
-admin.get('/', (req, res, next) => {
-    res.render('admin')
+admin.get('/', async (req, res, next) => {
+    var cards = await CourseModel.find({}).select({
+        title: 1,
+    });
+    res.render('admin', {cards});
+});
+admin.post('/delete', async (req, res, next) => {
+    if (Object.values(req.body).length == 0) return res.send("nothing to delete!");
+    Object.values(req.body).forEach(async v => {
+        await CourseModel.findByIdAndDelete(v);
+    });
+    res.send("deleting is done!");
 });
 admin.post('/', async (req, res, next) => {
     var form = new formidable.IncomingForm();

@@ -47,26 +47,31 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">Smart<span
+        <a href="/index" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="/img/icon.png" alt="" height="50px">Smart<span
                     style="color: #be185d;">Sync</span></p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index" class="nav-item nav-link active">Home</a>
-                <a href="about" class="nav-item nav-link">About</a>
-                <a href="courses" class="nav-item nav-link">Courses</a>
-                <a href="contact" class="nav-item nav-link">Contact</a>
-                <a href="user" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="/index" class="nav-item nav-link">Home</a>
+                <a href="/about" class="nav-item nav-link">About</a>
+                <a href="/courses" class="nav-item nav-link active">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="/team" class="dropdown-item">Our Team</a>
+                        <a href="/testimonial" class="dropdown-item">Testimonial</a>
+
+                    </div>
+                </div>
+                <a href="/contact" class="nav-item nav-link">Contact</a>
+                <a href="/user" class="nav-item nav-link"><i class="fa fa-user"></i></a>
                 <a href="#" class="nav-item nav-link">
                     <div id="google_translate_element"></div>
-                </a>
-                <!-- Print Button -->
-                <a href="#" class="nav-item nav-link d-flex align-items-center" onclick="window.print()" style="padding: 0 5px; margin-top: 5px;">
-                    <i class="fa fa-print" style="font-size: 20px;"></i> <!-- Using Font Awesome print icon -->
                 </a>
             </div>
         </div>
@@ -196,7 +201,6 @@
             </div>
             <div class="row g-4 py-2">
                 <% cards.forEach(card => { %>
-                    <div class="row g-4 py-2">
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="course-item shadow">
                                 <div class="position-relative overflow-hidden text-light image">
@@ -207,7 +211,7 @@
                                 </div>
                                 <div class="p-2 pb-0">
         
-                                    <h5 class="mb-1"><a class="text-dark"><%= card.title %></a> </h5>
+                                    <h5 class="mb-1"><a href="single" class="text-dark"><%= card.title %></a> </h5>
                                 </div>
                                 <div class="d-flex">
                                     <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
@@ -229,9 +233,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 <% }) %>
             </div>
+
         </div>
     </div>
     <!-- Courses End -->
@@ -248,8 +252,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <a href="tel:+212713025198" class="mb-2"><i class="fa fa-envelope me-3"></i>+212 713025198</a><br>
-                    <a href="mailto:rhazounisalaheddine@gmail.com" class="mb-2"><i class="fa fa-envelope me-3"></i>rhazounisalaheddine@gmail.com</a><br>
+                    <a href="tel:+218916135788" class="mb-2"><i class="fa fa-envelope me-3"></i>+218 916135788</a><br>
+                    <a href="mailto:binhunnaish@gmail.com" class="mb-2"><i class="fa fa-envelope me-3"></i>binhunnaish@gmail.com</a><br>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -266,7 +270,7 @@
                                 placeholder="Your email" required>
                             <button type="submit"
                                 class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><a
-                                    href="mailto:rhazounisalaheddine@gmail.com">Subscribe</a></button>
+                                    href="mailto:binhunnaish@gmail.com">Subscribe</a></button>
                         </form>
                     </div>
                 </div>
